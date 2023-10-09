@@ -19,7 +19,8 @@ module.exports = (app) => {
       });
   });
 
-  app.post('/users', (req, res) => {
+  app.post('/signup', (req, res) => {
+    const { name, email, password } = req.body;
     Users.create(req.body)
       .then((result) => res.json(result))
       .catch((error) => {
